@@ -2916,14 +2916,22 @@
 		top: 0;
 		left: 0;
 		opacity: 1.0;
+		/*width: 160px;
+		height: 160px;*/
+
+		/*border-radius: 10%;*/
+		/*border: solid grey 0px*/
 	}
 
 	#work .row.images .image:hover {
-		-moz-transform: scale(1.3);
-		-webkit-transform: scale(1.3);
-		-ms-transform: scale(1.3);
-		transform: scale(1.3);
+		-moz-transform: scale(1.2);
+		-webkit-transform: scale(1.2);
+		-ms-transform: scale(1.2);
+		transform: scale(1.2);
 		z-index: 5;
+		overflow: hidden;
+		/*border-radius: 50%;*/
+		/*border: solid grey 1px;*/
 	}
 
 	#work .row.images.inactive .image {
