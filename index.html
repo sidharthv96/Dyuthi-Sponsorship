@@ -10,21 +10,44 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
 	<style>
+	
 	#header{
 		text-shadow: 2px 2px 6px #212;
+
 		background: black;
 		background: -webkit-linear-gradient(rgb(0, 0, 0),rgba(0,0,0,0));
 		background: -o-linear-background(rgb(0, 0, 0),rgba(0,0,0,0));
 		background: -moz-linear-background(rgb(0, 0, 0),rgba(0,0,0,0));
 		background: linear-background(rgb(0, 0, 0),rgba(0,0,0,0));
 		color:#fff;
+		font-size: larger;
+		font-style: bold;
     box-shadow: rgba(0, 0, 0, 0.037255) 13px 1px 8px 24px, rgba(0, 0, 0, 0.480392) 1px 6px 15px 2px;
 	}
 	body{
-		background: #000;
+		background: url("assets/css/images/overlay.png"), url("images/intro.jpg");
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, bottom center;
+		background-repeat: repeat, no-repeat;
+		
+		background-blend-mode: color-burn;
+	}
+	
+	#lanterncontainer{
+	position: absolute;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	z-index: 100;
+	top:0px;
+}
+	#lanterncontainer img{
+		border: none;
 	}
 	</style>
 	<body>
+	<div id="lanterncontainer"></div>
 
 		<!-- Header -->
 			<header id="header">
@@ -170,6 +193,9 @@
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script src="assets/js/lanterns.js"></script>
+			
+			
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
