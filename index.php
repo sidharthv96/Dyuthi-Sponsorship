@@ -97,7 +97,7 @@ With a prize money of more than Rs.7 lakhs, Dyuthi boasts of more than 60 events
 				<div class="content container">
 					<header>
 						<h2>Previous Sponsors</h2>
-						 
+						 <h4 style="color:red;">Marketing brochure:<a style="color:blue;" href="https://drive.google.com/file/d/0By8yos6-tmUZRzQtM2lYSWh5bFU/view?usp=sharing">Download here</a></h4>
 						</header>
 
 						<!-- Lightbox Gallery  -->
@@ -151,6 +151,7 @@ Convenor, Sponsorship Committee   : 9495676980</h4>
 	<h4 style="color:black">Ananthu M R 
 
 Convenor, Programme Committee&nbsp; &nbsp; &nbsp;&nbsp; : 8547264670</h4>
+
 
 
 							<!-- <!-- Contact Form -->
