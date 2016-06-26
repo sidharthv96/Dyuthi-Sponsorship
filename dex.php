@@ -31,16 +31,12 @@
 	#header{
 		text-shadow: 2px 2px 6px #212;
 
-		background: black;
-    opacity: 0.8;
-		/*background: -webkit-linear-gradient(rgb(0, 0, 0),rgba(0,0,0,0));
-		background: -o-linear-background(rgb(0, 0, 0),rgba(0,0,0,0));
-		background: -moz-linear-background(rgb(0, 0, 0),rgba(0,0,0,0));
-		background: linear-background(rgb(0, 0, 0),rgba(0,0,0,0));*/
+    	opacity: 1;
 		color:#fff;
 		font-size: larger;
 		font-style: bold;
-    box-shadow: rgba(0, 0, 0, 0.037255) 13px 1px 8px 24px, rgba(0, 0, 0, 0.480392) 1px 6px 15px 2px;
+		background: rgba(0,0,0,0);
+    	box-shadow: rgba(0, 0, 0, 0.037255) 1px 1px 8px 24px, rgba(0, 0, 0, 0.480392) 1px 6px 17px 2px;
 	}
 	body{
 		background: url("assets/css/images/overlay.png"), url("images/intro.jpg");
@@ -48,18 +44,21 @@
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;
 		background-repeat: repeat, no-repeat;
-
 		background-blend-mode: color-burn;
+	}
+	.box{
+		background: rgba(0,0,0,0);
+    	box-shadow: rgba(0, 0, 0, 0.037255) 1px 1px 8px 24px, rgba(0, 0, 0, 0.480392) 1px 1px 17px 2px;
+    	color:#fff;
 	}
 
 	#lanterncontainer{
-	position: absolute;
-	overflow: hidden;
-	height: 100%;
-	width: 100%;
-	z-index: 100;
-	top:0px;
-}
+		position: absolute;
+		overflow: hidden;
+		height: 100%;
+		width: 100%;
+		top:0px;
+	}
 	#lanterncontainer img{
 		border: none;
 	}
