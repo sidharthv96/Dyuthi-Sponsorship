@@ -1,6 +1,6 @@
 lantern="images/lantern2.png";
-var speedAll = 0.3	;
-var totalLanterns = 30;
+var speedAll = 1	;
+var totalLanterns = 15;
 var size = 30;
 var cursorX;
 var cursorY;
@@ -31,11 +31,11 @@ window.onload=function(){
 		 if (width[i] > height[i]*1.3 || height[i] > width[i]*1.3) 
 			width[i] = height[i];
 		
-		 Ypos[i] = Math.random() * 300+WinHeight-100;
+		 Ypos[i] = Math.random() * 400+WinHeight;
 		 Xpos[i] = Math.round(Math.random()*(WinWidth)-width[i]*3);
 		 Zpos[i]= Math.min(width[i],height[i])+30;
 		 opacitylantern[i] = 1;
-		 Speed[i]= Math.random()*speedAll + 3;
+		 Speed[i]= Math.random()*speedAll + 2;
 		 hSpeed[i]=Speed[i];
 		 CStrafe[i]=0;
 		 Strafe[i]=Math.random()*0.06 + 0.03;
