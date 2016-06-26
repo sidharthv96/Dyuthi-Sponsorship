@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+* { margin: 0px; }
+div#field {
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  top:0px;
+    background-color: black;
+}
+div#field img {
+    position: absolute;
+    height: 4px;
+    width: 4px;
+}
+#lanterncontainer{
+position: absolute;
+overflow: hidden;
+height: 100%;
+width: 100%;
+z-index: 100;
+top:0px;
+}
+#lanterncontainer img{
+  border: none;
+}
+</style>
+<body>
+<div id="field"></div>
+<div id="lanterncontainer"></div>
+
+<script src="assets/js/jquery.min.js"></script>
+
+<script type="text/javascript">
+var STARCOUNT = Math.floor( Math.random() * 50 )+90; // change to change density of stars
+var pix = [ ];
+var stars = [ ];
+var fld = document.getElementById("field");
+
+for ( var p = 0; p < 10; ++p )
+{
+    var image = new Image();
+    image.src = "images/stars/star" + p + ".png";
+    pix[p] = image;
+}
+
+for ( var s = 0; s < STARCOUNT; ++ s )
+{
+    var x = Math.floor( Math.random() * $(window).width() ); // 600 matches my <div> size...
+    var y = Math.floor( Math.random() * $(window).height() ); // ...adjust to match yours.
+    var image = document.createElement("img");
+    image.src = pix[s % 10].src;
+    image.style.left = x + "px";
+    image.style.top  = y + "px";
+    stars.push(image);
+    fld.appendChild(image);
+}
+
+function twinkle( )
+{
+  var x=Math.floor( Math.random() * 40 )+10;
+    for ( var n = 1; n <= x; ++n ) // change 40 stars every time twinkle is called
+    {
+        var s = Math.floor( Math.random() * STARCOUNT );
+        var image = stars[s];
+        var p = Math.floor( Math.random() * 10 );
+        image.src = pix[p].src;
+    }
+}
+setInterval( twinkle, 50 ); // 50 milliseconds seems reasonable
+</script>
+
+<script src="assets/js/lanterns.js"></script>
+
+</body>
+</html>

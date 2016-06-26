@@ -6,8 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/twinkle.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+
 	</head>
 	<style>
 
@@ -62,7 +65,8 @@
 	}
 	</style>
 	<body>
-	<div id="lanterncontainer"></div>
+		<div class="galaxy"></div>
+	<!-- <div id="lanterncontainer"></div> -->
 
 		<!-- Header -->
 			<header id="header">
@@ -136,7 +140,7 @@
 
 						<?php
 						$images = array();
-						foreach(glob(dirname(__FILE__)."/images/logos/*.{gif,jpg,jpeg,png}", GLOB_BRACE) as $file) {
+						foreach(glob(dirname(__FILE__)."/images/logos/trans/*.{gif,jpg,jpeg,png}", GLOB_BRACE) as $file) {
 							$images[$file] = filemtime($file);
 						}
 						arsort($images);
@@ -154,7 +158,7 @@
 							else{
 								echo "right";
 							}
-							echo "' src='images/logos/".basename($file)."' alt='' /></div>";
+							echo "' src='images/logos/trans/".basename($file)."' alt='' /></div>";
 							$x=$x+1;
 						}
 						echo "</div>";
@@ -217,6 +221,8 @@
 
 			</footer>
 
+
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
@@ -229,6 +235,35 @@
 
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+
+			<script type="text/javascript">
+			// Random Stars
+			var generateStars = function(){
+
+			var $galaxy = $(".galaxy");
+			var iterator = 0;
+
+			while (iterator <= 100){
+				var xposition = Math.random();
+				var yposition = Math.random();
+				var star_type = Math.floor((Math.random() * 3) + 1);
+				var position = {
+						"x" : $galaxy.width() * xposition,
+						"y" : $galaxy.height() * yposition,
+				};
+
+				$('<div class="star star-type' + star_type + '"></div>').appendTo($galaxy).css({
+						"top" : position.y,
+						"left" : position.x
+				});
+
+				iterator++;
+			}
+
+			};
+
+			generateStars();
+			</script>
 
 	</body>
 </html>
