@@ -11,6 +11,25 @@
 	</head>
 	<style>
 
+	.frame img:hover {
+  -webkit-filter: grayscale(0%);
+  -webkit-transition: .2s ease-in-out;
+  -moz-filter: grayscale(0%);
+  -moz-transition: .2s ease-in-out;
+  -o-filter: grayscale(0%);
+  -o-transition: .2s ease-in-out;
+  filter: grayscale(0%);
+}
+
+.frame img {
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .2s ease-in-out;
+  -moz-filter: grayscale(100%);
+  -moz-transition: .2s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: .2s ease-in-out;
+  filter: grayscale(100%);
+}
 	#header{
 		text-shadow: 2px 2px 6px #212;
 
@@ -118,20 +137,35 @@
 					</header>
 
 					<!-- Lightbox Gallery  -->
-						<div class="container 75% ">
-							<div class="row 0% images">
-								<div class="6u 12u(mobile)"><img class="image fit from-left" src="images/thumbs/01.jpg" alt="" /></div>
-								<div class="6u 12u(mobile)"><a href="images/fulls/02.jpg" class="image fit from-right"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a></div>
-							</div>
-							<div class="row 0% images">
-								<div class="6u 12u(mobile)"><a href="images/fulls/03.jpg" class="image fit from-left"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a></div>
-								<div class="6u 12u(mobile)"><a href="images/fulls/04.jpg" class="image fit from-right"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a></div>
-							</div>
-							<div class="row 0% images">
-								<div class="6u 12u(mobile)"><a href="images/fulls/05.jpg" class="image fit from-left"><img src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a></div>
-								<div class="6u 12u(mobile)"><a href="images/fulls/06.jpg" class="image fit from-right"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a></div>
-							</div>
-						</div>
+						<div class="container 90% ">
+
+              <?php
+              $images = array();
+              foreach(glob(dirname(__FILE__)."/images/logos/*.{gif,jpg,jpeg,png}", GLOB_BRACE) as $file) {
+                $images[$file] = filemtime($file);
+              }
+              arsort($images);
+							$x=0;
+							echo "<div class='row 0% images'>";
+              foreach ($images as $file => $value) {
+								if ($x%6==0) {
+									echo "</div>";
+									echo "<div class='row 0% images'>";
+								}
+								echo "<div class='frame 2u 3u(mobile)'><img class='gimg image fit from-";
+								if($x%2==0){
+									echo "left";
+								}
+								else{
+									echo "right";
+								}
+								echo "' src='images/logos/".basename($file)."' alt='' /></div>";
+								$x=$x+1;
+              }
+							echo "</div>";
+              ?>
+
+
 
 				</div>
 			</section>
