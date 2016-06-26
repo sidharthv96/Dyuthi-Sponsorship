@@ -6,69 +6,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/styles.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
 
 </head>
-<style>
-
-.frame{
-	overflow: hidden;
-	border: dashed 1px;
-	border-color: #dfdfdf;
-
-}
-
-.frame img:hover {
-	-webkit-filter: grayscale(0%);
-	-moz-filter: grayscale(0%);
-	-o-filter: grayscale(0%);
-	filter: grayscale(0%);
-}
-
-.frame img {
-	-webkit-filter: grayscale(100%);
-	-moz-filter: grayscale(100%);
-	-o-filter: grayscale(100%);
-	filter: grayscale(100%);
-	display: block;
-}
-#header{
-	text-shadow: 2px 2px 6px #212;
-	opacity: 1;
-	color:#fff;
-	font-size: larger;
-	font-style: bold;
-	background: rgba(0,0,0,0.75);
-	box-shadow: rgba(0, 0, 0, 0.037255) 1px 1px 8px 24px, rgba(0, 0, 0, 0.480392) 1px 6px 17px 2px;
-}
-body{
-	background: url("assets/css/images/overlay.png"), url("images/intro.jpg");
-	background-size: 256px 256px, cover;
-	background-attachment: fixed, fixed;
-	background-position: top left, bottom center;
-	background-repeat: repeat, no-repeat;
-	background-blend-mode: color-burn;
-}
-.box{
-	background: rgba(0,0,0,0);
-	box-shadow: rgba(0, 0, 0, 0.037255) 1px 1px 8px 24px, rgba(0, 0, 0, 0.480392) 1px 1px 17px 2px;
-	color:#fff;
-}
-
-#lanterncontainer{
-	position: absolute;
-	overflow: hidden;
-	height: 100%;
-	width: 100%;
-	top:0px;
-}
-#lanterncontainer img{
-	border: none;
-}
-</style>
 <body>
+
+	<div id="field"></div>
 	<div id="lanterncontainer"></div>
 
 	<!-- Header -->
