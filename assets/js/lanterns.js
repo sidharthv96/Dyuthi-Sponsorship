@@ -54,7 +54,7 @@ window.onload=function(){
 		 {
 		 	blur=Math.max(1.02,(width[i]/30+0.2));
 		 }
-		 var newlantern='<img class="lanterns'+i+'" src="'+lantern+'" style="background-color:none; -webkit-filter: blur('+blur+'px)  saturate('+((Zpos[i]*3+120))+'%); z-index:'+Math.round(Zpos[i])+';position:absolute;top:'+Ypos[i]+'px;left:'+Xpos[i]+'px;height:'+height[i]+'px;width:'+width[i]+'px;opacity:'+opacitylantern[i]+';">';
+		 var newlantern='<img class="lanterns'+i+'" src="'+lantern+'" style="background-color:none; -webkit-filter: blur('+blur+'px) saturate(120%) ; z-index:'+Math.round(Zpos[i])+';position:absolute;top:'+Ypos[i]+'px;left:'+Xpos[i]+'px;height:'+height[i]+'px;width:'+width[i]+'px;opacity:'+opacitylantern[i]+';">';
 		 document.getElementById('lanterncontainer').innerHTML+=newlantern;
 	} 
 	setTimeout(fallinglanterns,100)
