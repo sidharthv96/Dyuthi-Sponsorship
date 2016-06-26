@@ -11,25 +11,20 @@
 	</head>
 	<style>
 
-	.frame img:hover {
-  -webkit-filter: grayscale(0%);
-  -webkit-transition: .2s ease-in-out;
-  -moz-filter: grayscale(0%);
-  -moz-transition: .2s ease-in-out;
-  -o-filter: grayscale(0%);
-  -o-transition: .2s ease-in-out;
-  filter: grayscale(0%);
-}
+		.frame img:hover {
+	  -webkit-filter: grayscale(0%);
+	  -moz-filter: grayscale(0%);
+	  -o-filter: grayscale(0%);
+	  filter: grayscale(0%);
+	}
 
-.frame img {
-  -webkit-filter: grayscale(100%);
-  -webkit-transition: .2s ease-in-out;
-  -moz-filter: grayscale(100%);
-  -moz-transition: .2s ease-in-out;
-  -o-filter: grayscale(100%);
-  -o-transition: .2s ease-in-out;
-  filter: grayscale(100%);
-}
+	.frame img {
+	  -webkit-filter: grayscale(100%);
+	  -moz-filter: grayscale(100%);
+	  -o-filter: grayscale(100%);
+	  filter: grayscale(100%);
+		display: block;
+	}
 	#header{
 		text-shadow: 2px 2px 6px #212;
 
@@ -137,35 +132,36 @@
 					</header>
 
 					<!-- Lightbox Gallery  -->
-						<div class="container 90% ">
+					<div class="container 90% ">
 
-              <?php
-              $images = array();
-              foreach(glob(dirname(__FILE__)."/images/logos/*.{gif,jpg,jpeg,png}", GLOB_BRACE) as $file) {
-                $images[$file] = filemtime($file);
-              }
-              arsort($images);
-							$x=0;
-							echo "<div class='row 0% images'>";
-              foreach ($images as $file => $value) {
-								if ($x%6==0) {
-									echo "</div>";
-									echo "<div class='row 0% images'>";
-								}
-								echo "<div class='frame 2u 3u(mobile)'><img class='gimg image fit from-";
-								if($x%2==0){
-									echo "left";
-								}
-								else{
-									echo "right";
-								}
-								echo "' src='images/logos/".basename($file)."' alt='' /></div>";
-								$x=$x+1;
-              }
-							echo "</div>";
-              ?>
+						<?php
+						$images = array();
+						foreach(glob(dirname(__FILE__)."/images/logos/*.{gif,jpg,jpeg,png}", GLOB_BRACE) as $file) {
+							$images[$file] = filemtime($file);
+						}
+						arsort($images);
+						$x=0;
+						echo "<div class='row 0% images'>";
+						foreach ($images as $file => $value) {
+							if ($x%6==0) {
+								echo "</div>";
+								echo "<div class='row 0% images'>";
+							}
+							echo "<div class='frame 2u 3u(mobile)'><img class='gimg image fit from-";
+							if($x%2==0){
+								echo "left";
+							}
+							else{
+								echo "right";
+							}
+							echo "' src='images/logos/".basename($file)."' alt='' /></div>";
+							$x=$x+1;
+						}
+						echo "</div>";
+						?>
 
 
+					</div>
 
 				</div>
 			</section>
