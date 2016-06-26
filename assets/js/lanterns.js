@@ -18,6 +18,7 @@ Strafe=new Array();
 height = new Array();
 dir= new Array();
 width = new Array();
+hSpeed=new Array();
 var counter = 0;
 opacitylantern = new Array();
 WinWidth = $(window).width();
@@ -25,20 +26,21 @@ WinHeight = $(window).height();
 window.onload=function(){
 	for (i = 0 ;i < totalLanterns;i++){
 		 dir[i]=Math.random()<0.5 ? true: false;
-		 width[i]=Math.round(Math.random()*size+45);
-		 height[i]=Math.round(Math.random()*size+45);
+		 width[i]=Math.round(Math.random()*size+55);
+		 height[i]=Math.round(Math.random()*size+55);
 		 if (width[i] > height[i]*1.3 || height[i] > width[i]*1.3) 
-			width[i] = 0.8*height[i];
+			width[i] = height[i];
 		
 		 Ypos[i] = Math.random() * 300+WinHeight-100;
 		 Xpos[i] = Math.round(Math.random()*(WinWidth)-width[i]*3);
 		 Zpos[i]= Math.min(width[i],height[i])+30;
 		 opacitylantern[i] = 1;
 		 Speed[i]= Math.random()*speedAll + 3;
+		 hSpeed[i]=Speed[i];
 		 CStrafe[i]=0;
 		 Strafe[i]=Math.random()*0.06 + 0.03;
 		 var lanterns=$('#lanterncontainer');
-		 var newlantern='<img class="lanterns'+i+'" src="'+lantern+'" style="background-color:none; -webkit-filter: blur('+(width[i]/30-0.5)+'px)  saturate('+((Zpos[i]*3+120))+'%); z-index:'+Math.round(Zpos[i])+';position:absolute;top:'+Ypos[i]+'px;left:'+Xpos[i]+'px;height:'+height[i]+'px;width:'+width[i]+'px;opacity:'+opacitylantern[i]+';">';
+		 var newlantern='<img class="lanterns'+i+'" src="'+lantern+'" style="background-color:none; -webkit-filter: blur('+Math.max(1.02,(width[i]/60+0.2))+'px)  saturate('+((Zpos[i]*3+120))+'%); z-index:'+Math.round(Zpos[i])+';position:absolute;top:'+Ypos[i]+'px;left:'+Xpos[i]+'px;height:'+height[i]+'px;width:'+width[i]+'px;opacity:'+opacitylantern[i]+';">';
 		 document.getElementById('lanterncontainer').innerHTML+=newlantern;
 	} 
 	setTimeout(fallinglanterns,100)
@@ -61,21 +63,25 @@ function fallinglanterns(){
 		// else
 		// 	
 		if(dir[i])
-			strafex = Speed[i]-1.5;//-Speed[i]*Math.cos(CStrafe[i])-1;//Math.sin(CStrafe[i]);
+			strafex = hSpeed[i]-1.5;//-Speed[i]*Math.cos(CStrafe[i])-1;//Math.sin(CStrafe[i]);
 		else
-			strafex = -Speed[i]+1.5//+Speed[i]*Math.cos(CStrafe[i])+1;
+			strafex = -hSpeed[i]+1.5//+Speed[i]*Math.cos(CStrafe[i])+1;
 		if( Ypos[i]<cursorY+150 && Ypos[i] > cursorY - 150 && Xpos[i]<cursorX+150 && Xpos[i] > cursorX - 150)
 		{
 		//	console.log(Ypos[i],Xpos[i],cursorY,cursorX);
 			
 			if(cursorX>(Xpos[i]+width[i]/2))
 			{
-				Xpos[i]-= Math.abs(6);
+				Xpos[i]-= Math.abs(hSpeed[i]);
 				dir[i]=false;
+				hSpeed[i]+=0.1;
+
 			}
 			else{
-				Xpos[i]+=Math.abs(6)
+				Xpos[i]+=Math.abs(hSpeed[i]);
 				dir[i]=true;
+				hSpeed[i]+=0.1;
+				
 			}
 
 			Ypos[i]+=strafey;
@@ -99,6 +105,7 @@ function fallinglanterns(){
 			Ypos[i]=WinHeight+50;
 			Xpos[i]=Math.round(Math.random()*WinWidth-width[i]*4);
 			Speed[i]= Math.random()*speedAll + 2;
+			hSpeed[i]=Speed[i];
 		}
 		$(".lanterns"+i).css({top: Ypos[i], left: Xpos[i]});
 		
