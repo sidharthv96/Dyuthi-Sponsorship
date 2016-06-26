@@ -1,6 +1,11 @@
 lantern="images/lantern2.png";
+
+WinWidth = $(window).width();
+WinHeight = $(window).height();
 var speedAll = 1	;
 var totalLanterns = 15;
+if(WinWidth< 500)
+	totalLanterns=10;
 var size = 30;
 var cursorX;
 var cursorY;
@@ -20,14 +25,19 @@ dir= new Array();
 width = new Array();
 hSpeed=new Array();
 var counter = 0;
+var lanterns=$('#lanterncontainer');
 opacitylantern = new Array();
-WinWidth = $(window).width();
-WinHeight = $(window).height();
 window.onload=function(){
 	for (i = 0 ;i < totalLanterns;i++){
 		 dir[i]=Math.random()<0.5 ? true: false;
-		 width[i]=Math.round(Math.random()*size+55);
-		 height[i]=Math.round(Math.random()*size+55);
+		 width[i]=Math.round(Math.random()*size+45);
+		 height[i]=Math.round(Math.random()*size+45);
+		 if(WinWidth<500)
+		 {
+		 	 width[i]=Math.round(Math.random()*size+20);
+			 height[i]=Math.round(Math.random()*size+20);
+		 
+		 }
 		 if (width[i] > height[i]*1.3 || height[i] > width[i]*1.3) 
 			width[i] = height[i];
 		
@@ -39,8 +49,12 @@ window.onload=function(){
 		 hSpeed[i]=Speed[i];
 		 CStrafe[i]=0;
 		 Strafe[i]=Math.random()*0.06 + 0.03;
-		 var lanterns=$('#lanterncontainer');
-		 var newlantern='<img class="lanterns'+i+'" src="'+lantern+'" style="background-color:none; -webkit-filter: blur('+Math.max(1.02,(width[i]/60+0.2))+'px)  saturate('+((Zpos[i]*3+120))+'%); z-index:'+Math.round(Zpos[i])+';position:absolute;top:'+Ypos[i]+'px;left:'+Xpos[i]+'px;height:'+height[i]+'px;width:'+width[i]+'px;opacity:'+opacitylantern[i]+';">';
+		 var blur=Math.max(1.02,(width[i]/55+0.2));
+		 if(WinWidth<500)
+		 {
+		 	blur=Math.max(1.02,(width[i]/30+0.2));
+		 }
+		 var newlantern='<img class="lanterns'+i+'" src="'+lantern+'" style="background-color:none; -webkit-filter: blur('+blur+'px)  saturate('+((Zpos[i]*3+120))+'%); z-index:'+Math.round(Zpos[i])+';position:absolute;top:'+Ypos[i]+'px;left:'+Xpos[i]+'px;height:'+height[i]+'px;width:'+width[i]+'px;opacity:'+opacitylantern[i]+';">';
 		 document.getElementById('lanterncontainer').innerHTML+=newlantern;
 	} 
 	setTimeout(fallinglanterns,100)
