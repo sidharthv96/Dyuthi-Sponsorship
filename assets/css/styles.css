@@ -1,7 +1,7 @@
 
 .frame{
 	overflow: hidden;
-	border: dashed 1px;
+	border: solid 2px;
 	border-color: #dfdfdf;
 
 }
@@ -39,7 +39,7 @@ body{
 }
 
 #lanterncontainer{
-	position: absolute;
+	position: fixed;
 	overflow: hidden;
 	height: 100%;
 	width: 100%;
@@ -50,7 +50,7 @@ body{
 }
 * { margin: 0px; }
 div#field {
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   height: 100%;
   width: 100%;
@@ -58,12 +58,12 @@ div#field {
     background-color: black;
 }
 div#field img {
-    position: absolute;
+    position: fixed;
     height: 4px;
     width: 4px;
 }
 #lanterncontainer{
-position: absolute;
+position: fixed;
 overflow: hidden;
 height: 100%;
 width: 100%;

@@ -2190,10 +2190,10 @@
 			input[type="reset"].down.anchored,
 			.button.down.anchored,
 			button.down.anchored {
-				bottom: 0;
+				bottom: 0;/*
 				border-bottom: 0;
 				border-radius: 3em 3em 0 0;
-				height: 4.5em;
+				height: 4.5em;*/
 				margin-left: -2.5em;
 			}
 
@@ -2873,7 +2873,6 @@
 /* Intro */
 
 	#intro {
-		background: url("images/overlay.png"), url("../../images/intro.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;
@@ -2885,7 +2884,6 @@
 /* One */
 
 	#one {
-		background: url("images/overlay.png"), url("../../images/one.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
@@ -2894,14 +2892,15 @@
 /* Two */
 
 	#two {
-		background: url("images/overlay.png"), url("../../images/two.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
 	}
 
 /* Work */
-
+#work{
+	background: none;
+}
 	#work .row.images .image {
 		-moz-transition: all 1s ease;
 		-webkit-transition: all 1s ease;

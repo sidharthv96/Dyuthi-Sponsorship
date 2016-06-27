@@ -71,7 +71,7 @@
 
 	<!-- One -->
 	<section id="one" class="main style2 right dark fullscreen">
-		<div class="content box style2" style="background-color:#8B0000;">
+		<div class="content box style2" style="background-color:rgba(139, 0, 0, 0.77);    top: -8%;">
 			<header>
 				<h2>Dyuthi</h2>
 			</header>
@@ -82,7 +82,7 @@
 
 		<!-- Two -->
 		<section id="two" class="main style2 left dark fullscreen">
-			<div class="content box style2" style="background-color:#72348E;">
+			<div class="content box style2" style="background-color:rgba(114, 52, 142, 0.78);    top: -8%;">
 				<header>
 					<h2>Events</h2>
 				</header>
@@ -91,6 +91,7 @@ With a prize money of more than Rs.7 lakhs, Dyuthi boasts of more than 60 events
 				</div>
 				<a href="#work" class="button style2 down anchored">Next</a>
 			</section>
+			
 
 			<!-- Work -->
 			<section id="work" class="main style3 primary">
