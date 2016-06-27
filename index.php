@@ -10,8 +10,7 @@
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
-
-	<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+	<!-- <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
@@ -27,7 +26,7 @@
 <link rel="manifest" href="/images/favicon/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#ffffff"> -->
 
 </head>
 <body>
@@ -91,7 +90,7 @@ With a prize money of more than Rs.7 lakhs, Dyuthi boasts of more than 60 events
 				</div>
 				<a href="#work" class="button style2 down anchored">Next</a>
 			</section>
-			
+
 
 			<!-- Work -->
 			<section id="work" class="main style3 primary">
@@ -155,7 +154,7 @@ Convenor, Programme Committee&nbsp; &nbsp; &nbsp;&nbsp; : 8547264670</h4>
 
 
 
-							<!-- <!-- Contact Form -->
+							<!-- Contact Form -->
 							
 							 
 
@@ -189,9 +188,6 @@ Convenor, Programme Committee&nbsp; &nbsp; &nbsp;&nbsp; : 8547264670</h4>
 				<script src="assets/js/jquery.min.js"></script>
 				<script src="assets/js/jquery.poptrox.min.js"></script>
 				<script src="assets/js/jquery.scrolly.min.js"></script>
-				<script src="assets/js/jquery.scrollex.min.js"></script>
-				<script src="assets/js/skel.min.js"></script>
-				<script src="assets/js/util.js"></script>
 				<script src="assets/js/lanterns.js"></script>
 
 
